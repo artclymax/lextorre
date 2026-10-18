@@ -1,0 +1,16 @@
+@use "../tools" as *;
+
+.hero-page {
+	padding-top: calc(var(--header-height) + 60px);
+	padding-bottom: adapt(60, 40);
+	&__container {
+		@include flex-column;
+		gap: adapt(120, 60);
+	}
+
+	&__breadcrumbs {
+	}
+
+	&__title {
+	}
+}

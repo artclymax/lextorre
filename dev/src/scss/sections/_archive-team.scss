@@ -1,0 +1,23 @@
+@use "../tools" as *;
+
+.archive-team {
+	padding-bottom: adapt(120, 60);
+	&__container {
+	}
+
+	&__list {
+		@include reset-list;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		gap: 20px;
+	}
+
+	&__item {
+		flex: 0 1 250px;
+
+		@include media($mobile) {
+			flex: 0 1 340px;
+		}
+	}
+}

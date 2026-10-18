@@ -1,0 +1,50 @@
+@use "../tools" as *;
+
+.single-news-hero {
+	padding-top: calc(var(--header-height) + adapt(60, 20));
+	padding-bottom: adapt(90, 20);
+
+	&__container {
+	}
+
+	&__breadcrumbs {
+		&:not(:last-child) {
+			margin-bottom: adapt(74, 60);
+		}
+	}
+
+	&__title {
+		max-width: 852px;
+		&:not(:last-child) {
+			margin-bottom: adapt(40, 10);
+		}
+	}
+
+	&__meta {
+		max-width: 852px;
+		display: flex;
+		gap: 20px;
+		@include text-overline;
+		text-transform: uppercase;
+	}
+
+	&__date {
+		color: var(--color-secondary-accent);
+	}
+
+	&__category {
+		ul {
+			@include reset-list;
+		}
+
+		a {
+			color: inherit;
+			text-decoration: none;
+			transition: all 0.3s;
+
+			@include hover {
+				color: var(--color-secondary-accent);
+			}
+		}
+	}
+}

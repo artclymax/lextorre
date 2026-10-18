@@ -1,0 +1,148 @@
+@use "../tools" as *;
+
+.single-team-intro {
+	padding-top: calc(var(--header-height) + adapt(60, 20));
+	&__container {
+		display: grid;
+		grid-template-columns: 1fr 1.45fr;
+		align-items: center;
+		gap: 20px;
+
+		@include media($mobile) {
+			grid-template-columns: 1fr;
+		}
+	}
+	&__breadcrumbs {
+		grid-column: 1 / -1;
+		margin-bottom: adapt(60, 40);
+	}
+	&__image {
+		height: adapt(723, 510);
+		border-bottom: 1px solid var(--color-accent-gold);
+		border-right: 1px solid var(--color-accent-gold);
+		@include media($mobile) {
+			max-width: 450px;
+		}
+	}
+
+	&__content {
+	}
+
+	&__info {
+	}
+
+	&__name {
+		@include reset;
+		font-family: var(--font-family-title-second);
+		font-size: adapt(72, 30);
+		font-weight: 400;
+
+		@include media($mobile) {
+			font-family: var(--font-family-title);
+			font-weight: 700;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
+	}
+
+	&__position {
+		@include reset;
+		font-size: 12px;
+		text-transform: uppercase;
+		color: #c8a45d;
+		letter-spacing: 0.1em;
+
+		@include media($mobile) {
+			@include text-overline;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: adapt(30, 20);
+		}
+	}
+
+	&__descr {
+		max-width: 624px;
+	}
+
+	&__details {
+		display: grid;
+		grid-template-columns: 0.7fr 0.5fr 0.5fr;
+		padding-top: adapt(20, 16);
+		margin-top: adapt(30, 20);
+		border-top: 1px solid var(--color-accent-gold);
+		gap: 20px;
+
+		@include media($mobile) {
+			grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+		}
+
+		&:not(:last-child) {
+			margin-bottom: adapt(30, 20);
+		}
+	}
+
+	&__subtitle {
+		@include reset;
+		@include text-overline;
+		color: var(--color-accent-warm);
+		text-transform: uppercase;
+	}
+
+	&__study,
+	&__lang,
+	&__specs {
+		@include flex-column;
+		gap: 20px;
+	}
+	&__specs {
+		max-width: 200px;
+		@include media($mobile) {
+			max-width: 100%;
+		}
+	}
+	&__list {
+		@include reset-list;
+		@include flex-column;
+		gap: 10px;
+	}
+
+	&__item {
+		font-size: 12px;
+	}
+	&__contacts {
+	}
+}
+
+.single-team-contacts {
+	display: flex;
+	flex-wrap: wrap;
+	gap: adapt(20, 10, $tablet) adapt(80, 20, $tablet);
+
+	.icon {
+		--width: 44px;
+		--bg-size: 16px;
+		gap: adapt(20, 10, $tablet);
+	}
+	&__phones {
+	}
+
+	&__list {
+		@include reset-list;
+		@include flex-column;
+	}
+
+	&__item {
+	}
+
+	&__link {
+		color: inherit;
+		text-decoration: none;
+		@include hover-link;
+	}
+
+	&__emails {
+	}
+}

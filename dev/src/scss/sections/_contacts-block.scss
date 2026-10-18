@@ -1,0 +1,54 @@
+@use "../tools" as *;
+
+.contacts-block {
+	display: flex;
+	flex-wrap: wrap;
+	column-gap: adapt(40, 20, $tablet);
+	align-items: flex-start;
+
+	&__title {
+		flex: 1 1 100%;
+		&:not(:last-child) {
+			margin-bottom: adapt(20, 10);
+		}
+	}
+
+	&__company {
+		@include reset;
+		flex: 1 1 100%;
+		opacity: 0.4;
+		@include text-overline;
+		text-transform: uppercase;
+
+		&:not(:last-child) {
+			margin-bottom: adapt(40, 20);
+		}
+	}
+
+	.contacts-box {
+		flex: 1;
+
+		@include media($tablet) {
+			flex: 1 1 100%;
+		}
+	}
+
+	&__descr {
+		flex: 1;
+
+		@include media($tablet) {
+			flex: 1 1 100%;
+			margin-top: 20px;
+		}
+	}
+
+	&__info {
+		flex: 1 1 100%;
+		margin-top: 10px;
+		font-size: 14px;
+
+		a {
+			@include hover-link;
+		}
+	}
+}

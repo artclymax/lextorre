@@ -1,0 +1,74 @@
+@use "../tools" as *;
+
+.services {
+	padding-block: adapt(80, 20);
+	background: var(--color-warm-background);
+
+	&__container {
+	}
+
+	&__list {
+		--min: 280px;
+		gap: 20px;
+
+		@include counter(true, ".services-item", "", ".");
+	}
+
+	&__item {
+	}
+}
+
+.services-item {
+	outline: 1px solid var(--color-border);
+	background: var(--color-surface-card);
+	padding: adapt(18, 10);
+	@include flex-column;
+	gap: adapt(20, 10);
+	transition: all 0.3s;
+	border: 2px solid var(--color-0);
+
+	@include hover {
+		border-right: 2px solid var(--color-accent-gold);
+		border-top: 2px solid var(--color-accent-gold);
+		outline-color: var(--color-0);
+		box-shadow: 0 4px 4px 0 rgba(212, 175, 55, 0.15);
+	}
+
+	@include media($mobile) {
+		box-shadow: 0 4px 4px 0 rgba(212, 175, 55, 0.15);
+		outline-color: var(--color-0);
+
+		&:nth-child(odd) {
+			border-right: 2px solid var(--color-accent-gold);
+			border-top: 2px solid var(--color-accent-gold);
+		}
+		
+		&:nth-child(even) {
+			border-left: 2px solid var(--color-accent-gold);
+			border-bottom: 2px solid var(--color-accent-gold);
+		}
+	}
+
+	&::before {
+		@include title-3;
+		color: var(--color-accent-gold);
+	}
+	&__wrapper {
+		@include flex-column;
+		gap: adapt(20, 10);
+	}
+
+	&__title {
+		@include reset;
+		@include text-l;
+	}
+
+	&__descr {
+		color: var(--color-primary-brand);
+		opacity: 0.6;
+		font-weight: 300;
+		font-size: 14px;
+	}
+}
+.descr {
+}

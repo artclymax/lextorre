@@ -1,0 +1,32 @@
+@use "../tools" as *;
+
+.logo {
+	flex-shrink: 0;
+	display: flex;
+
+	a {
+		text-decoration: none;
+		color: inherit;
+		font-size: 20px;
+		font-weight: 500;
+		flex-shrink: 0;
+		display: inline-flex;
+		align-items: center;
+		transition: all 0.3s;
+
+
+		width: 203px;
+
+		@include media($tablet) {
+			width: 166px;
+		}
+		
+		img {
+			width: 100%;
+		}
+		@include hover {
+			transform: scale(1.04);
+		}
+	}
+
+}

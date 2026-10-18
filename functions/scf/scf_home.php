@@ -1,0 +1,503 @@
+<?php
+create_options_page(
+	'Главная',
+	'opt-home',
+);
+
+// hero
+create_options_page(
+	'Первый экран',
+	'opt-hero',
+	'opt-home',
+);
+
+create_fields(
+	'Первый экран',
+	'opt-hero',
+	[
+		add_field_group(
+			'hero_title',
+			'Заголовок',
+			[
+				add_field_text(
+					'ru',
+					'ru'
+				),
+				add_field_text(
+					'en',
+					'en'
+				),
+			]
+		),
+		add_field_group(
+			'hero_descr',
+			'Описание',
+			[
+				add_field_redactor_wysiwyg(
+					'ru',
+					'ru'
+				),
+				add_field_redactor_wysiwyg(
+					'en',
+					'en'
+				),
+			],
+			'strong - чтобы сделать большими слова, em - чтобы сделать акцентного цвета'
+		),
+		add_field_group(
+			'hero_btn',
+			'Кнопка',
+			[
+				add_field_link(
+					'ru',
+					'ru'
+				),
+				add_field_link(
+					'en',
+					'en'
+				),
+			],
+		),
+		add_field_group(
+			'hero_benefits',
+			'Преимущества',
+			[
+				add_field_redactor_wysiwyg(
+					'ru',
+					'ru'
+				),
+				add_field_redactor_wysiwyg(
+					'en',
+					'en'
+				),
+			],
+		),
+		add_field_image(
+			'hero_image',
+			'Картинка'
+		),
+		add_field_image(
+			'hero_image_mobile',
+			'Картинка мобильная'
+		),
+	]
+);
+
+//!===============
+// services
+create_options_page(
+	'Услуги',
+	'opt-services',
+	'opt-home',
+);
+
+create_fields(
+	'Услуги',
+	'opt-services',
+	[
+		add_field_repeater(
+			'services_list',
+			'Список',
+			[
+				add_field_group(
+					'title',
+					'Заголовок',
+					[
+						add_field_text(
+							'ru',
+							'ru'
+						),
+						add_field_text(
+							'en',
+							'en'
+						),
+					]
+				),
+				add_field_group(
+					'descr',
+					'Описание',
+					[
+						add_field_redactor_wysiwyg(
+							'ru',
+							'ru'
+						),
+						add_field_redactor_wysiwyg(
+							'en',
+							'en'
+						),
+					],
+				)
+			],
+			null,
+			[
+				'collapse' => 'title',
+				'layout' => 'block',
+			]
+		),
+	]
+);
+
+//!===============
+// services
+create_options_page(
+	'Специализация',
+	'opt-section-spec',
+	'opt-home',
+);
+
+create_fields(
+	'Специализация',
+	'opt-section-spec',
+	[
+		add_field_group(
+			'section_spec_title',
+			'Заголовок',
+			[
+				add_field_text(
+					'ru',
+					'ru'
+				),
+				add_field_text(
+					'en',
+					'en'
+				),
+			]
+		),
+		add_field_group(
+			'section_spec_btn',
+			'Кнопка',
+			[
+				add_field_link(
+					'ru',
+					'ru'
+				),
+				add_field_link(
+					'en',
+					'en'
+				),
+			]
+		),
+	]
+);
+
+//!===============
+// services
+create_options_page(
+	'Работаем глобально',
+	'opt-locations',
+	'opt-home',
+);
+
+create_fields(
+	'Работаем глобально',
+	'opt-locations',
+	[
+		add_field_group(
+			'locations_title',
+			'Заголовок',
+			[
+				add_field_text(
+					'ru',
+					'ru'
+				),
+				add_field_text(
+					'en',
+					'en'
+				),
+			]
+		),
+		add_field_group(
+			'locations_descr',
+			'Описание',
+			[
+				add_field_redactor_wysiwyg(
+					'ru',
+					'ru'
+				),
+				add_field_redactor_wysiwyg(
+					'en',
+					'en'
+				),
+			]
+		),
+		add_field_repeater(
+			'locations_list',
+			'Страны',
+			[
+				add_field_text(
+					'loc_title',
+					'Название'
+				)
+			]
+		),
+		add_field_image(
+			'locations_image',
+			'Картинка'
+		),
+		add_field_image(
+			'locations_image_mobile',
+			'Картинка мобильная'
+		)
+	]
+);
+//!===============
+// services
+create_options_page(
+	'Профессионалы',
+	'opt-section-team',
+	'opt-home',
+);
+
+create_fields(
+	'Профессионалы',
+	'opt-section-team',
+	[
+		add_field_group(
+			'section_team_title',
+			'Заголовок',
+			[
+				add_field_redactor_wysiwyg(
+					'ru',
+					'ru'
+				),
+				add_field_redactor_wysiwyg(
+					'en',
+					'en'
+				),
+
+			],
+			'strong - чтобы сделать акцентного цвета'
+		),
+		add_field_group(
+			'section_team_btn',
+			'Кнопка',
+			[
+				add_field_link(
+					'ru',
+					'ru'
+				),
+				add_field_link(
+					'en',
+					'en'
+				),
+			]
+		),
+		add_field_group(
+			'section_team_btn_person',
+			'Текст кнопки для просмотра специалиста',
+			[
+				add_field_text(
+					'ru',
+					'ru'
+				),
+				add_field_text(
+					'en',
+					'en'
+				),
+			]
+		),
+	]
+);
+
+//!=== experience ===
+create_options_page(
+	'Опыт и результаты',
+	'opt-experience',
+	'opt-home',
+);
+
+create_fields(
+	'Опыт и результаты',
+	'opt-experience',
+	[
+		add_field_group(
+			'exp_title',
+			'Заголовок',
+			[
+				add_field_text(
+					'ru',
+					'ru'
+				),
+				add_field_text(
+					'en',
+					'en'
+				),
+
+			],
+		),
+		add_field_repeater(
+			'exp_list',
+			'Список',
+			[
+				add_field_image(
+					'exp_list_image',
+					'Картинка',
+				),
+				add_field_group(
+					'exp_list_title',
+					'Заголовок',
+					[
+						add_field_text(
+							'ru',
+							'ru'
+						),
+						add_field_text(
+							'en',
+							'en'
+						),
+					]
+				),
+				add_field_group(
+					'exp_list_descr',
+					'Описание',
+					[
+						add_field_text(
+							'ru',
+							'ru'
+						),
+						add_field_text(
+							'en',
+							'en'
+						),
+					]
+				),
+			],
+			null,
+			[
+				'layout' => 'block',
+				'collapsed' => 'field_exp_list_title',
+			]
+		)
+
+	]
+);
+
+//!=== section-news ===
+create_options_page(
+	'Последние публикации',
+	'opt-section-news',
+	'opt-home',
+);
+
+create_fields(
+	'Последние публикации',
+	'opt-section-news',
+	[
+		add_field_group(
+			'section_news_title',
+			'Заголовок',
+			[
+				add_field_text(
+					'ru',
+					'ru'
+				),
+				add_field_text(
+					'en',
+					'en'
+				),
+			],
+		),
+		add_field_group(
+			'section_news_btn',
+			'Кнопка',
+			[
+				add_field_link(
+					'ru',
+					'ru'
+				),
+				add_field_link(
+					'en',
+					'en'
+				),
+			],
+		),
+		add_field_group(
+			'section_news_btn_single',
+			'Кнопка записи',
+			[
+				add_field_text(
+					'ru',
+					'ru'
+				),
+				add_field_text(
+					'en',
+					'en'
+				),
+			],
+		),
+	]
+);
+
+//!=== faq ===
+create_options_page(
+	'Частые вопросы',
+	'opt-faq',
+	'opt-home',
+);
+
+create_fields(
+	'Частые вопросы',
+	'opt-faq',
+	[
+		add_field_group(
+			'faq_title',
+			'Заголовок',
+			[
+				add_field_text(
+					'ru',
+					'ru'
+				),
+				add_field_text(
+					'en',
+					'en'
+				),
+			],
+		),
+		add_field_group(
+			'faq_descr',
+			'Описание',
+			[
+				add_field_redactor_wysiwyg(
+					'ru',
+					'ru'
+				),
+				add_field_redactor_wysiwyg(
+					'en',
+					'en'
+				),
+			],
+		),
+		add_field_image(
+			'faq_image',
+			'Картинка'
+		)
+	]
+);
+
+//!=== docs ===
+create_options_page(
+	'Лицензии',
+	'opt-docs',
+	'opt-home',
+);
+
+create_fields(
+	'Лицензии',
+	'opt-docs',
+	[
+		add_field_group(
+			'docs_title',
+			'Заголовок',
+			[
+				add_field_text(
+					'ru',
+					'ru'
+				),
+				add_field_text(
+					'en',
+					'en'
+				),
+			],
+		),
+	]
+);

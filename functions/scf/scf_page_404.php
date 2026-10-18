@@ -1,0 +1,62 @@
+<?php
+create_options_page(
+	'Страница 404',
+	'opt-page-404',
+);
+
+create_fields(
+	'Поля - Страница 404',
+	'opt-page-404',
+	[
+		add_field_group(
+			'page_404_title',
+			'Заголовок',
+			[
+				add_field_text(
+					'ru',
+					'ru'
+				),
+				add_field_text(
+					'en',
+					'en'
+				),
+			]
+		),
+		add_field_group(
+			'page_404_descr',
+			'Описание',
+			[
+				add_field_redactor_wysiwyg(
+					'ru',
+					'ru'
+				),
+				add_field_redactor_wysiwyg(
+					'en',
+					'en'
+				),
+			]
+		),
+		add_field_group(
+			'page_404_btn',
+			'Кнопка',
+			[
+				add_field_link(
+					'ru',
+					'ru'
+				),
+				add_field_link(
+					'en',
+					'en'
+				),
+			]
+		),
+		add_field_image(
+			'page_404_image',
+			'Картинка'
+		),
+		add_field_image(
+			'page_404_image_mobile',
+			'Картинка мобильная'
+		),
+	]
+);

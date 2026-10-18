@@ -1,0 +1,113 @@
+@use "../tools" as *;
+
+.page-in-memoriam {
+	padding-top: 66px;
+	padding-bottom: var(--section-padding);
+
+	&__container {
+		display: grid;
+		grid-template-columns: 700px 1fr;
+		gap: 20px adapt(120, 20, $tablet);
+
+		@include media($tablet) {
+			grid-template-columns: 1fr 0.5fr;
+		}
+		@include media($mobile) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__content {
+	}
+
+	&__descr {
+		color: rgba(53, 54, 53, 0.9);
+		&:not(:last-child) {
+			margin-bottom: adapt(60, 20);
+		}
+	}
+
+	&__list {
+		@include reset-list;
+		@include flex-column;
+		gap: adapt(40, 20, $mobile);
+	}
+
+	&__item {
+	}
+}
+
+.page-in-memoriam-swiper {
+	@include media($mobile) {
+		margin-bottom: 60px;
+	}
+	&__wrapper {
+		@include media($mobile) {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__btn {
+	}
+
+	&__btn-prev {
+	}
+
+	&__btn-next {
+	}
+}
+
+.page-in-memoriam-slide {
+	width: 200px !important;
+	@include media($mobile) {
+		width: 340px !important;
+	}
+	&__wrapper {
+		height: 300px;
+		@include media($mobile) {
+			height: 510px;
+		}
+	}
+}
+
+.in-memoriam-history {
+	@include flex-column;
+	gap: 10px;
+
+	&__date {
+		@include reset;
+		font-family: var(--font-family-mono);
+		color: var(--color-secondary-accent);
+		display: flex;
+		gap: 20px;
+		align-items: center;
+
+		&::before {
+			content: "";
+			@include square(13px);
+			background: var(--color-secondary-accent);
+			border-radius: 50%;
+		}
+
+		@include media($mobile) {
+			font-family: var(--font-family-title);
+			font-weight: 700;
+			font-size: 20px;
+		}
+	}
+
+	&__title {
+		font-weight: 500;
+		font-size: adapt(24, 16);
+
+		@include media($mobile) {
+			font-weight: 400;
+			font-family: var(--font-family-main);
+		}
+	}
+
+	&__descr {
+		font-size: 14px;
+		max-width: 300px;
+	}
+}

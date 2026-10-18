@@ -1,0 +1,68 @@
+@use "functions" as *;
+@use "mixins" as *;
+@use "constants" as *;
+
+@mixin title-hero {
+	@include reset;
+	font-size: 61px;
+	font-family: var(--font-family-title);
+	font-weight: 700;
+	max-width: 895px;
+	@include media(1210) {
+		position: relative;
+		z-index: 2;
+	}
+	@include media($tablet) {
+		font-size: adapt(61, 32, $finishBreakpoint, $tablet);
+	}
+}
+@mixin title-1 {
+	@include reset;
+	font-family: var(--font-family-title);
+	font-weight: 700;
+	font-size: adapt(44, 30);
+	line-height: 120%;
+	letter-spacing: 0.01em;
+}
+
+@mixin title-2 {
+	@include reset;
+	font-family: var(--font-family-title);
+	font-weight: 700;
+	font-size: adapt(32, 24);
+}
+
+@mixin title-3 {
+	@include reset;
+	font-family: var(--font-family-title);
+	font-size: adapt(24, 20);
+	font-weight: 700;
+	line-height: 133%;
+	letter-spacing: 0.01em;
+}
+
+@mixin text-l {
+	font-weight: 400;
+	font-size: adapt(18, 16);
+}
+
+@mixin text-m {
+	font-weight: 400;
+	font-size: adapt(16, 14);
+}
+
+@mixin text-caption {
+	font-weight: 400;
+	font-size: 12px;
+}
+
+@mixin text-overline {
+	font-weight: 600;
+	font-size: 12px;
+	letter-spacing: 0.14%;
+}
+
+@mixin text-button {
+	font-weight: 500;
+	font-size: adapt(16, 14);
+}

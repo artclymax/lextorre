@@ -1,0 +1,89 @@
+@use "../tools" as *;
+
+.hero-about {
+	position: relative;
+	padding-top: calc(var(--header-height) + adapt(60, 20));
+	color: var(--color-text-on-dark);
+	padding-bottom: adapt(120, 20);
+	background-color: var(--color-dark);
+	background-position: center bottom; /* x y */
+	background-size: cover;
+	background-repeat: no-repeat;
+@include media($mobile) {
+	background-position: 25%;
+}
+	&__container {
+		display: grid;
+		grid-template-columns: 1fr 0.82fr;
+
+		@include media($mobile) {
+			grid-template-columns: 1fr;
+		}
+	}
+	.breadcrumbs {
+		grid-column: 1 / -1;
+		&:not(:last-child) {
+			margin-bottom: 120px;
+
+			@include media($mobile) {
+				margin-bottom: 60px;
+			}
+		}
+
+		
+	}
+	&__header {
+	}
+
+	&__title {
+		strong {
+			color: var(--color-accent-gold);
+		}
+	}
+
+	&__descr {
+		font-size: adapt(20, 16);
+		font-weight: 300;
+		text-wrap: balance;
+	}
+
+	&__list {
+		grid-row: 3;
+		grid-column: 2;
+		@include reset-list;
+		@include flex-column;
+		gap: adapt(80, 20);
+
+		@include media($mobile) {
+			grid-row: initial;
+			grid-column: initial;
+			margin-top: 20px;
+		}
+	}
+
+	&__item {
+	}
+}
+
+.hero-about-item {
+	padding-top: 10px;
+	@include flex-column;
+	gap: adapt(20, 10);
+	position: relative;
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 240px;
+		height: 1px;
+		background: var(--color-accent-gold);
+	}
+	&__title {
+	}
+
+	&__descr {
+		font-size: adapt(18, 14);
+	}
+}

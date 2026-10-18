@@ -1,0 +1,25 @@
+@use "../tools" as *;
+
+.section-contacts {
+	background-color: var(--color-primary-brand);
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	
+	color: var(--color-text-on-dark);
+	padding-block: adapt(80, 20);
+
+	&__container {
+		display: grid;
+		grid-template-columns: 0.6fr 1fr;
+		gap: 40px adapt(80, 20, $tablet);
+		align-items: start;
+
+		@include media($tablet) {
+			grid-template-columns: 1fr 1fr;
+		}
+		@include media($mobile) {
+			grid-template-columns: 1fr;
+		}
+	}
+}

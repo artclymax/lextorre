@@ -1,0 +1,24 @@
+@use "../tools" as *;
+
+.single-news-main {
+	padding-top: adapt(74, 60);
+	padding-bottom: var(--section-padding);
+	&__container {
+		display: grid;
+		grid-template-columns: 1fr 0.47fr;
+		gap: 60px adapt(150, 20, $tablet);
+		align-items: start;
+		position: relative;
+		@include media($mobile) {
+			grid-template-columns: 1fr;
+		}
+	}
+	.single-news-sidebar {
+		position: sticky;
+		top: 10px;
+
+		@include media($mobile) {
+			position: static;
+		}
+	}
+}

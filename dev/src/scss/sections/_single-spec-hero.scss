@@ -1,0 +1,102 @@
+@use "../tools" as *;
+
+.single-spec-hero {
+	padding-top: calc(var(--header-height) + adapt(60, 20));
+	&__container {
+		&:not(:last-child) {
+			margin-bottom: 40px;
+			@include media($mobile) {
+				margin-bottom: 60px;
+			}
+		}
+	}
+
+	&__breadcrumbs {
+	}
+
+	&__uncontainer {
+	}
+
+	&__content {
+		--width: #{adapt(720, 350, $mobile)};
+		padding-bottom: adapt(84, 60);
+		@include media($mobile) {
+			padding-bottom: unset;
+		}
+	}
+
+	&__header {
+		&:not(:last-child) {
+			margin-bottom: adapt(80, 20);
+		}
+	}
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: adapt(20, 10);
+		}
+	}
+
+	&__descr {
+		font-size: adapt(20, 14);
+		font-weight: 300;
+
+		&:not(:last-child) {
+			margin-bottom: adapt(40, 20);
+		}
+
+		@include media($mobile) {
+			font-weight: 400;
+		}
+	}
+
+	&__btn {
+	}
+
+	&__image-mobile {
+		height: adapt(680, 300);
+		&:not(:last-child) {
+			margin-bottom: 60px;
+		}
+	}
+
+	&__tasks {
+		@include flex-column;
+		gap: 20px;
+		max-width: 700px;
+	}
+
+	&__tasks-title {
+	}
+
+	&__tasks-list {
+		gap: 10px adapt(30, 10, $tablet);
+	}
+
+	&__tasks-item {
+		display: flex;
+		align-items: center;
+		gap: adapt(16, 10, $tablet);
+		color: rgba(11, 11, 12, 0.7);
+		font-size: adapt(16, 14);
+		&::before {
+			content: "";
+			@include square(16px);
+			flex-shrink: 0;
+			@include bgimg(url("../../../public/images/icons/item-arrow.svg"));
+		}
+	}
+
+	&__image {
+		--object-pos: top right;
+	}
+}
+.uncontainer {
+	&__content {
+	}
+
+	&__full {
+	}
+}
+.tasks-item {
+}

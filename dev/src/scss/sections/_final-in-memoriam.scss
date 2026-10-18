@@ -1,0 +1,32 @@
+@use "../tools" as *;
+
+.final-in-memoriam {
+	padding-top: adapt(60, 30);
+	padding-bottom: var(--section-padding);
+	&__container {
+		@include flex-column;
+		align-items: center;
+		gap: adapt(40, 20);
+	}
+
+	&__descr {
+		text-align: center;
+	}
+
+	&__btn-box {
+		width: 100%;
+		@include flex-center;
+		flex-wrap: wrap;
+		gap: 10px 24px;
+	}
+
+	&__link {
+		max-width: initial;
+		width: initial;
+
+		@include media($mobile) {
+			max-width: 100%;
+			width: 100%;
+		}
+	}
+}

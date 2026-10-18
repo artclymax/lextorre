@@ -1,0 +1,52 @@
+@use "../tools" as *;
+
+.contacts-page {
+	&__content {
+		@include media($mobile) {
+			padding-bottom: 20px;
+		}
+	}
+
+	&__container {
+		display: grid;
+		grid-template-columns: 1fr 0.72fr;
+		gap: 20px adapt(100, 20, $tablet);
+		align-items: start;
+
+		@include media($tablet) {
+			grid-template-columns: 1fr 1fr;
+		}
+		@include media($mobile) {
+			grid-template-columns: 1fr;
+		}
+	}
+	.contacts-block {
+	}
+	&__form {
+		padding: adapt(20, 10);
+		background: var(--color-surface-card);
+	}
+	&__map {
+		height: 430px;
+		@include media($mobile) {
+			padding-inline: var(--container-padding);
+			padding-bottom: var(--section-padding);
+			height: adapt(430, 300);
+		}
+		iframe {
+			border: none;
+			height: 100%;
+		}
+		
+	}
+
+	.contacts-block__company,
+	.form__descr {
+		opacity: 1;
+		color: var(--color-text-secondary);
+	}
+	.cf-select-custom__field,
+	.form-input {
+		border-color: var(--color-text-primary);
+	}
+}

@@ -1,0 +1,114 @@
+@use "../tools" as *;
+
+.values {
+	position: relative;
+	padding-block: adapt(60, 20);
+
+	&__container {
+	}
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: adapt(60, 40);
+		}
+	}
+
+	&__list {
+		@include reset-list;
+
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+
+		position: relative;
+
+		@include media($mobile) {
+			grid-template-columns: 1fr;
+			padding: 20px 20px 20px 0;
+			gap: 20px;
+		}
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			background-color: var(--color-accent-gold);
+			box-shadow: 0 2px 4px 0 #c8a45d;
+		}
+
+		&::before {
+			width: 100%;
+			height: 1px;
+			top: 50%;
+			transform: translateY(-50%);
+			left: 0;
+
+			@include media($mobile) {
+				top: unset;
+				bottom: 0;
+			}
+		}
+
+		&::after {
+			width: 1px;
+			height: 100%;
+			top: 0;
+			left: 50%;
+			transform: translateX(-50%);
+
+			@include media($mobile) {
+				left: unset;
+				right: 0;
+			}
+		}
+	}
+
+	&__item {
+	}
+
+	&__bg {
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+
+		img {
+			@include media($mobile) {
+				object-position: 87%;
+			}
+		}
+	}
+}
+
+.values-item {
+	padding: 42px 85px 16px;
+
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+
+	@include media($mobile) {
+		padding: 0;
+	}
+
+	&__icon {
+		@include square(32px);
+
+		@include media($mobile) {
+			@include square(24px);
+		}
+
+		img {
+			display: block;
+		}
+	}
+
+	&__title {
+	}
+
+	&__descr {
+		@include text-m;
+	}
+}

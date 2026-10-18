@@ -1,0 +1,55 @@
+@use "../tools" as *;
+
+.hero-thank-you {
+	background-position: center right;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	@include media($mobile) {
+		@include overlay(#fff, 0.6);
+	}
+
+	&__container {
+		padding-top: calc(var(--header-height) + 20px);
+		padding-bottom: 20px;
+		min-height: 90dvh;
+		@include flex-column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		gap: 20px;
+		position: relative;
+		z-index: 2;
+	}
+
+	&__title {
+		text-wrap: balance;
+	}
+
+	&__descr {
+		@include media($mobile) {
+			font-size: 16px;
+			font-weight: 400;
+			font-family: var(--font-family-main);
+		}
+	}
+
+	&__form {
+		@include flex-column;
+		gap: 20px;
+		max-width: 386px;
+		width: 100%;
+		align-items: center;
+		p {
+			@include reset;
+		}
+	}
+
+	&__input {
+		border-color: var(--color-primary-brand);
+	}
+
+	&__btn {
+		max-width: 100%;
+	}
+}

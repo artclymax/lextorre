@@ -1,0 +1,60 @@
+@use "../tools" as *;
+
+.cases {
+	padding-block: var(--section-padding-05) var(--section-padding);
+
+	&__container {
+	}
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: adapt(60, 40);
+		}
+	}
+
+	&__list {
+		@include reset-list;
+
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	&__item {
+	}
+}
+
+.cases-item {
+	background-color: var(--color-surface-card);
+	border: 1px solid var(--color-border);
+
+	&__link {
+		text-decoration: none;
+
+		display: flex;
+		gap: 10px;
+		justify-content: space-between;
+		padding: adapt(36, 10) adapt(40, 10);
+
+		--icon-bg: url("../../../public/images/icons/cases-arrow.svg");
+		--width: 24px;
+
+		@include hover {
+			.cases-item__title {
+				color: var(--color-accent-gold);
+			}
+		}
+	}
+
+	&__title {
+		color: var(--color-text-primary);
+		font-size: adapt(24, 16);
+		max-width: 875px;
+		transition: all 0.3s;
+
+		@include media($mobile) {
+			font-family: var(--font-family-main);
+			font-weight: 400;
+		}
+	}
+}

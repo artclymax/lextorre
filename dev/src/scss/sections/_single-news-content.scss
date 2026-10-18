@@ -1,0 +1,33 @@
+@use "../tools" as *;
+
+.single-news-content {
+	&__container {
+	}
+
+	&__image {
+		aspect-ratio: 1;
+		&:not(:last-child) {
+			margin-bottom: adapt(60, 40);
+		}
+	}
+
+	&__descr {
+		&:not(:last-child) {
+			margin-bottom: adapt(40, 20);
+		}
+	}
+
+	&__btn {
+		background: var(--color-warm-background);
+		padding: 8px 14px;
+		max-width: initial;
+		width: initial;
+		border: 1px solid rgba(#d4af37, 0.25);
+
+		@include media($mobile) {
+			max-width: 100%;
+			width: 100%;
+			padding: 14px;
+		}
+	}
+}

@@ -1,0 +1,93 @@
+@use "../tools" as *;
+
+.hero-in-memoriam {
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	padding-top: calc(var(--header-height) + adapt(60, 20));
+	padding-bottom: 20px;
+	margin-bottom: 70px;
+	box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+	@include media($mobile) {
+		margin-bottom: unset;
+	}
+	&__container {
+	}
+
+	&__breadcrumbs {
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 20px;
+		@include media($mobile) {
+			flex-wrap: wrap;
+		}
+	}
+
+	&__image {
+		height: adapt(580, 390);
+		flex: 0 1 500px;
+		order: 2;
+		margin-bottom: -90px;
+		margin-top: -40px;
+		border-bottom: 2px solid var(--color-accent-warm);
+		border-right: 2px solid var(--color-accent-warm);
+		@include media($mobile) {
+			//flex: 1 1 100%;
+			margin: unset;
+			order: initial;
+		}
+	}
+
+	&__content {
+		flex: 0 1 560px;
+		@include media($mobile) {
+			flex: 1 1 100%;
+		}
+	}
+
+	&__title {
+		@include reset;
+		font-family: var(--font-family-title);
+		font-style: italic;
+		font-weight: 300;
+		font-size: adapt(44, 32);
+		&:not(:last-child) {
+			margin-bottom: adapt(40, 10);
+		}
+
+		@include media($mobile) {
+			font-weight: 500;
+			font-style: normal;
+		}
+	}
+
+	&__name {
+		font-weight: 400;
+
+		&:not(:last-child) {
+			margin-bottom: adapt(20, 10);
+		}
+
+		@include media($mobile) {
+			font-weight: 500;
+		}
+	}
+
+	&__date {
+		@include reset;
+		font-size: adapt(16, 12);
+		color: var(--color-accent-warm);
+
+		@include media($mobile) {
+			font-weight: 600;
+		}
+	}
+}

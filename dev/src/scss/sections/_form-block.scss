@@ -1,0 +1,22 @@
+@use "../tools" as *;
+
+.form {
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__descr {
+		opacity: 0.4;
+		@include text-overline;
+		text-transform: uppercase;
+
+		&:not(:last-child) {
+			margin-bottom: adapt(40, 20);
+		}
+	}
+
+	&__form-box {
+	}
+}

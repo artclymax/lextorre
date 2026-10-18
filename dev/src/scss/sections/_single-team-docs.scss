@@ -1,0 +1,75 @@
+@use "../tools" as *;
+
+.single-team-docs {
+	padding-bottom: adapt(120, 60);
+	&__container {
+	}
+
+	&__title {
+		@include media($mobile) {
+			&:not(:last-child) {
+				margin-bottom: 40px;
+			}
+		}
+	}
+
+	&__list {
+		max-width: 795px;
+		margin-left: auto;
+		gap: adapt(40, 20, $tablet) 20px;
+	}
+
+	&__item {
+	}
+}
+.single-team-docs-item {
+	&__link-wrapper {
+		text-decoration: none;
+		color: inherit;
+		@include flex-column;
+	}
+
+	&__meta {
+		text-transform: uppercase;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 10px;
+		&:not(:last-child) {
+			margin-bottom: adapt(15, 10);
+		}
+	}
+
+	&__date {
+		@include text-overline;
+		color: var(--color-accent-gold);
+	}
+
+	&__category {
+		font-size: 10px;
+		font-family: var(--font-family-mono);
+		color: var(--color-accent-warm);
+		background: rgba(211, 154, 44, 0.1);
+		padding: 4px 12px;
+	}
+
+	&__title {
+		transition: all 0.3s;
+		@include hover {
+			color: var(--color-accent-gold);
+		}
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
+	}
+
+	&__descr {
+		font-size: 14px;
+		&:not(:last-child) {
+			margin-bottom: adapt(20, 10);
+		}
+	}
+
+	&__btn {
+	}
+}

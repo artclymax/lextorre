@@ -1,0 +1,52 @@
+@use "../tools" as *;
+
+.single-team-experience {
+	padding-bottom: adapt(120, 60);
+	&__container {
+	}
+}
+
+.single-team-experience-content {
+	&__btn {
+		@include reset;
+		width: 100%;
+		text-align: left;
+		background: var(--color-0);
+		border: none;
+		display: flex;
+		align-items: center;
+		@include media($mobile, min) {
+			pointer-events: none;
+			cursor: text;
+		}
+	}
+
+	&__title {
+	}
+
+	&__icon {
+		@include flex-center;
+		@include square(44px);
+		color: var(--color-accent-gold);
+		transform: rotate(180deg);
+		transition: all 0.3s;
+		@include media($mobile, min) {
+			display: none;
+		}
+		.spoiler-active & {
+			transform: rotate(0deg);
+		}
+	}
+
+	&__content {
+	}
+
+	&__descr {
+		max-width: 825px;
+		margin-left: auto;
+		padding-left: 30px;
+		@include media($mobile) {
+			padding-top: 10px;
+		}
+	}
+}

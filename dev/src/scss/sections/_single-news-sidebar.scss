@@ -1,0 +1,63 @@
+@use "../tools" as *;
+
+.wrapper {
+	overflow: initial;
+}
+.single-news-sidebar {
+	border: 1px solid var(--color-border);
+	padding: adapt(20, 10);
+	background: var(--color-surface-card);
+	@include flex-column;
+	gap: adapt(20, 10);
+
+	&__title {
+		@include reset;
+		font-family: var(--font-family-title);
+		font-style: italic;
+		font-weight: 400;
+		font-size: 20px;
+	}
+
+	&__list {
+		@include reset-list;
+		@include flex-column;
+		gap: 20px;
+	}
+
+	&__item {
+	}
+}
+.single-news-sidebar-item {
+	&__link-wrapper {
+		@include flex-column;
+		text-decoration: none;
+		color: inherit;
+		gap: 10px;
+		@include hover {
+			.single-news-sidebar-item__title {
+				color: var(--color-accent-gold);
+			}
+		}
+	}
+	&__date {
+		font-size: 10px;
+		font-family: var(--font-family-mono);
+		color: var(--color-accent-gold);
+		@include media($mobile) {
+			font-family: var(--font-family-main);
+			font-size: 12px;
+		}
+	}
+
+	&__title {
+		@include reset;
+		font-weight: inherit;
+		font-family: var(--font-family-title);
+		font-size: adapt(16, 14);
+		transition: all 0.3s;
+
+		@include media($mobile) {
+			font-family: var(--font-family-main);
+		}
+	}
+}

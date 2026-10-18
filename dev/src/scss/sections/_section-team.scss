@@ -1,0 +1,100 @@
+@use "../tools" as *;
+
+.section-team {
+	&__container {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		align-items: center;
+		gap: adapt(60, 20) 20px;
+
+		@include media($mobile) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__title {
+		strong {
+			color: var(--color-accent-gold);
+		}
+	}
+
+	&__btn {
+		grid-row: 1;
+		grid-column: 2;
+		justify-self: end;
+
+		@include media($mobile) {
+			grid-row: initial;
+			grid-column: initial;
+			justify-self: initial;
+		}
+	}
+
+	&__list {
+		@include reset-list;
+		grid-column: 1 / -1;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		max-width: 940px;
+		width: 100%;
+		margin: 0 auto;
+		gap: 20px adapt(100, 20, $tablet);
+
+		@include media($mobile) {
+			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		}
+	}
+
+	&__item {
+	}
+}
+
+.section-team-item {
+	width: 100%;
+	
+	&__link-wrapper {
+		@include flex-column;
+		text-decoration: none;
+		color: inherit;
+		height: 100%;
+		width: 100%;
+	}
+
+	&__image {
+		height: 335px;
+		border-bottom: 1px solid var(--color-accent-gold);
+		border-right: 1px solid var(--color-accent-gold);
+		box-shadow: 0 4px 4px 0 rgba(212, 175, 55, 0.15);
+
+		&:not(:last-child) {
+			margin-bottom: adapt(20, 10);
+		}
+
+		@include media($mobile) {
+			height: 511px;
+		}
+	}
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
+	}
+
+	&__position {
+		@include reset;
+		flex-grow: 1;
+		@include text-overline;
+		color: var(--color-accent-warm);
+		text-transform: uppercase;
+
+		&:not(:last-child) {
+			margin-bottom: adapt(20, 10);
+		}
+	}
+
+	&__btn {
+		width: 100%;
+		max-width: 100%;
+	}
+}

@@ -1,0 +1,68 @@
+@use "../tools" as *;
+
+.locations {
+	position: relative;
+	padding-top: adapt(40, 20);
+	padding-bottom: adapt(90, 20);
+	color: var(--color-text-on-dark);
+
+	&__container {
+	}
+
+	&__list {
+		@include reset-list;
+		display: flex;
+		flex-wrap: wrap;
+		text-align: center;
+		align-items: center;
+		justify-content: center;
+		gap: 10px;
+
+		&:not(:last-child) {
+			margin-bottom: adapt(72, 20);
+		}
+	}
+
+	&__item {
+	}
+
+	&__title {
+		max-width: 878px;
+		&:not(:last-child) {
+			margin-bottom: adapt(40, 20);
+		}
+	}
+
+	&__descr {
+		@include text-caption;
+		text-transform: uppercase;
+		color: var(--color-accent-gold);
+		text-wrap: balance;
+	}
+
+	&__image {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+	}
+}
+.container {
+}
+.locations-item {
+	padding: 9px 22px;
+	border: 1px solid var(--color-divider);
+	border-radius: 30px;
+
+	@include media($mobile) {
+		width: 100%;
+	}
+}
+.title-1 {
+}
+.descr {
+}
+.image-box {
+}

@@ -1,0 +1,70 @@
+@use "../tools" as *;
+
+.contacts-box {
+	@include reset-list;
+	@include flex-column;
+	gap: adapt(20, 10);
+
+	&__item {
+		gap: adapt(20, 10);
+		align-items: flex-start;
+		--width: #{adapt(44, 24)};
+
+		&::before {
+			--bg-size: #{adapt(16, 12)};
+			--bg-color: var(--color-0);
+		}
+	}
+
+	&__address {
+		@include reset-child;
+		font-style: inherit;
+	}
+
+	&__list-column {
+		@include reset-list;
+		@include flex-column;
+		gap: 10px;
+
+		&--1 {
+			margin-top: adapt(8, 4);
+		}
+	}
+
+	&__link {
+		&--1 {
+			margin-top: adapt(8, 4);
+		}
+	}
+
+	&__list-flex {
+		@include reset-list;
+		flex-wrap: wrap;
+		display: flex;
+		//gap: 20px;
+
+		a {
+			@include square(44px);
+			@include flex-center;
+
+			img {
+				@include square(24px);
+			}
+		}
+	}
+}
+
+.icon {
+}
+.icon--address {
+	--icon-bg: url("../../../public/images/icons/address.svg");
+}
+.icon--phone {
+	--icon-bg: url("../../../public/images/icons/phone.svg");
+}
+.icon--email {
+	--icon-bg: url("../../../public/images/icons/email.svg");
+}
+.icon--skype {
+	--icon-bg: url("../../../public/images/icons/skype.svg");
+}

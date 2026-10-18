@@ -1,0 +1,218 @@
+@use "../tools" as *;
+.hero {
+	position: relative;
+	overflow: hidden;
+	background: var(--color-background-dark);
+	color: var(--color-text-on-dark);
+
+	&__container {
+		//min-height: 900px;
+		padding-top: calc(var(--header-height) + 0px);
+		padding-bottom: 100px;
+
+		position: relative;
+		z-index: 2;
+
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: 300px 400px;
+
+		@include media(1210) {
+			position: static;
+		}
+
+		@include media($tablet) {
+			grid-template-columns: 1fr;
+			grid-template-rows: initial;
+			padding-bottom: 40px;
+		}
+	}
+
+	&__title-box {
+		grid-column: 1 / -1;
+		padding-top: 138px;
+
+		position: relative;
+
+		&::after {
+			content: "";
+			position: absolute;
+			right: calc(1200px / 3);
+			transform: translateX(100%);
+			top: 0;
+			height: 55%;
+			width: 1px;
+			background: var(--color-secondary-accent);
+			z-index: -1;
+		}
+		&::before {
+			content: "";
+			position: absolute;
+			right: calc(1200px / 3);
+			transform: translateX(100%);
+			bottom: 0;
+			height: 28%;
+			width: 1px;
+			background: var(--color-secondary-accent);
+			z-index: -1;
+		}
+		@include media(1210) {
+			&::before,
+			&::after {
+				display: none;
+			}
+		}
+		@include media($tablet) {
+			padding-top: unset;
+			margin-top: 100px;
+		}
+	}
+	&__title {
+		@include reset;
+		font-size: 61px;
+		font-family: var(--font-family-title);
+		font-weight: 700;
+		max-width: 895px;
+		@include media(1210) {
+			position: relative;
+			z-index: 2;
+		}
+		@include media($tablet) {
+			font-size: adapt(61, 32, $finishBreakpoint, $tablet);
+		}
+	}
+
+	&__content {
+		grid-column: 2;
+		grid-row: 2;
+		position: relative;
+		border-top: 1px solid var(--color-secondary-accent);
+		border-left: 1px solid var(--color-secondary-accent);
+
+		@include flex-column;
+		justify-content: flex-end;
+		padding-bottom: 63px;
+		padding-left: 30px;
+
+		@include media(1210) {
+			border: none;
+			position: relative;
+			z-index: 2;
+		}
+
+		@include media($tablet) {
+			grid-column: initial;
+			grid-row: initial;
+			padding-bottom: unset;
+			padding-left: unset;
+			margin-top: 20px;
+		}
+	}
+
+	&__descr {
+		position: absolute;
+		top: 112px;
+		left: 30px;
+		width: 600px;
+		strong {
+			@include title-2;
+		}
+
+		em {
+			font-style: normal;
+			color: var(--color-accent-gold);
+		}
+		@include media($tablet) {
+			position: static;
+		}
+	}
+
+	&__btn {
+		max-width: 100%;
+		@include media($tablet) {
+			margin-top: 60px;
+		}
+	}
+
+	&__benefits-descr {
+		padding-bottom: 20px;
+		grid-row: 2;
+		align-self: end;
+		border-bottom: 1px solid var(--color-secondary-accent);
+
+		@include text-overline;
+		text-transform: uppercase;
+		color: var(--color-accent-gold);
+
+		@include media(1210) {
+			border: none;
+			position: relative;
+			z-index: 2;
+		}
+
+		@include media($tablet) {
+			grid-column: 1;
+			grid-row: 1;
+			margin-top: 100px;
+			padding-bottom: unset;
+		}
+
+		ul {
+			@include reset-list;
+			@include flex-column;
+			gap: adapt(20, 10);
+		}
+
+		li {
+			display: flex;
+			gap: 6px;
+
+			&::before {
+				content: "";
+				margin-top: 0.45em;
+				@include square(5px);
+				background: currentColor;
+				border-radius: 50%;
+			}
+		}
+	}
+
+	&__image {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%) translateX(calc(1180px / 3));
+		left: calc(1200px / 2px);
+		width: 97%;
+		height: 100%;
+		z-index: -1;
+		--object-fit: contain;
+		--object-pos: right;
+
+		@include media(1210) {
+			left: 0;
+			transform: translateY(0);
+			top: 0;
+			height: 100%;
+			width: 110dvw;
+			z-index: 1;
+		}
+
+		@include media($tablet) {
+			--object-fit: cover;
+		}
+		@include media($mobile) {
+			//--object-fit: contain;
+			--object-pos: right;
+		}
+	}
+}
+.container {
+}
+.title-1 {
+}
+.descr {
+}
+.btn {
+}
+.image-box {
+}

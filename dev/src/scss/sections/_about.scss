@@ -1,0 +1,94 @@
+@use "../tools" as *;
+
+.about {
+	padding-bottom: unset;
+
+	&__uncontainer {
+	}
+
+	&__content {
+		@include flex-column;
+		gap: adapt(80, 20, $tablet);
+	}
+
+	&__descr {
+		strong {
+			@include title-2;
+		}
+	}
+
+	&__advantages {
+	}
+
+	&__image {
+		--object-pos: bottom;
+		position: relative;
+		min-height: adapt(520, 340, $finishBreakpoint, $mobile);
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 2px;
+			width: 100%;
+			background: var(--color-accent-gold);
+			z-index: 5;
+		}
+	}
+}
+.uncontainer {
+	--width: #{adapt(552, 350, $mobile)};
+	--gap: #{adapt(30, 20, $mobile)};
+	display: flex;
+	gap: 20px var(--gap);
+	padding-left: max(var(--container-padding), calc((100% - var(--container-width)) / 2));
+	
+	@include media($mobile) {
+		flex-wrap: wrap;
+		padding-inline: var(--container-padding);
+	}
+
+	&__content {
+		flex: 0 0 var(--width);
+		@include media($mobile) {
+			flex: 1 1 100%;
+		}
+	}
+
+	&__full {
+		flex: 0 1 calc(100% - var(--width) - var(--gap));
+		@include media($mobile) {
+			flex: 1 1 100%;
+		}
+	}
+}
+.about-advantages {
+	@include flex-column;
+	gap: adapt(40, 20);
+
+	&__title {
+		color: #c8a45d;
+	}
+
+	&__list {
+		@include reset-list;
+		@include flex-column;
+		gap: adapt(40, 20);
+	}
+
+	&__item {
+	}
+}
+
+.about-advantages-item {
+	@include flex-column;
+	gap: adapt(20, 10);
+
+	&__title {
+	}
+
+	&__descr {
+	}
+}

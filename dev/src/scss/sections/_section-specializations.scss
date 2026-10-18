@@ -1,0 +1,131 @@
+@use "../tools" as *;
+
+.section-specializations {
+	&__container {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		align-items: center;
+		gap: adapt(60, 40) 20px;
+
+		@include media($mobile) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__title {
+	}
+
+	&__btn {
+		grid-row: 1;
+		grid-column: 2;
+		justify-self: end;
+
+		@include media($mobile) {
+			grid-row: initial;
+			grid-column: initial;
+			justify-self: initial;
+		}
+	}
+
+	&__list {
+		@include reset-list;
+		grid-column: 1 / -1;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+
+		@include counter(true, ".section-specializations-item__link-wrapper");
+
+		@include media($tablet) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@include media($mobile) {
+			grid-template-columns: 1fr;
+			gap: 10px;
+			position: relative;
+			&::after {
+				content: '';
+				position: absolute;
+				top: -10px;
+				left: -10px;
+				width: calc(100% + 20px);
+				//transform: translateX(-50%);
+				height: calc(100% + 20px);
+				z-index: -1;
+				background: var(--color-accent-gold);
+			}
+		}
+	}
+
+	&__item {
+	}
+}
+
+.section-specializations-item {
+	min-height: 298px;
+	background: var(--color-background);
+
+	&:first-child,
+	&:nth-child(5) {
+		.section-specializations-item__link-wrapper {
+			@include media($tablet, min) {
+				border-left-color: var(--color-0);
+			}
+		}
+	}
+	@include media($tablet) {
+		&:nth-child(odd) {
+			.section-specializations-item__link-wrapper {
+				border-left-color: var(--color-0);
+			}
+		}
+		min-height: unset;
+	}
+	&__link-wrapper {
+		position: relative;
+		text-decoration: none;
+		color: inherit;
+		@include flex-column;
+		gap: adapt(32, 10);
+		padding: 20px 10px;
+		height: 100%;
+		border-top: 2px solid var(--color-accent-gold);
+		border-left: 2px solid var(--color-accent-gold);
+		padding-bottom: 40px;
+		transition: all 0.3s;
+
+		@include hover {
+			background: var(--color-surface-card);
+		}
+
+		@include media($mobile) {
+			border: none;
+		}
+
+		&::before {
+			@include text-overline;
+			color: var(--color-accent-warm);
+		}
+		&::after {
+			content: "";
+			width: 95%;
+			height: 2px;
+			background: var(--color-accent-gold);
+			position: absolute;
+			bottom: 20px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+
+	&__title {
+		min-height: adapt(63, 56);
+		@include media($mobile) { 
+			min-height: auto;
+		}
+	}
+
+	&__descr {
+		@include text-m;
+		opacity: 0.5;
+	}
+}

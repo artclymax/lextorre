@@ -1,0 +1,41 @@
+@use "../tools" as *;
+
+.hero-page-second {
+	padding-top: calc(var(--header-height) + adapt(60, 20));
+	padding-bottom: adapt(120, 20);
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	&:not(.hero-page-second-dark) {
+		color: var(--color-text-on-dark);
+	}
+
+	&__container {
+	}
+
+	&__breadcrumbs {
+		&:not(:last-child) {
+			margin-bottom: 60px;
+		}
+		span {
+			color: var(--color-text-on-dark) !important;
+			.hero-page-second-dark & {
+				color: var(--color-primary-brand) !important;
+			}
+		}
+	}
+
+	&__title {
+	}
+
+	&__descr {
+		max-width: 642px;
+		font-size: adapt(20, 14);
+		font-weight: 300;
+
+		@include media($mobile) {
+			font-weight: 400;
+		}
+	}
+}

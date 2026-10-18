@@ -1,0 +1,84 @@
+@use "../tools" as *;
+
+.experience {
+	&__container {
+	}
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: 40px;
+		}
+	}
+
+	&__list {
+		@include reset-list;
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: adapt(40, 20, $tablet);
+	}
+
+	&__item {
+	}
+}
+
+.experience-item {
+	flex: 0 1 350px;
+	@include flex-column;
+	height: 100%;
+	transition: all 0.3s;
+
+	@include media($mobile, min) {
+		filter: grayscale(100%);
+
+		@include hover {
+			filter: grayscale(0%);
+		}
+	}
+
+	&__image {
+		width: 180px;
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__title {
+		color: var(--color-accent-warm);
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
+	}
+
+	&__descr {
+		@include reset;
+		max-width: 65%;
+		@include media($mobile) {
+			font-size: 14px;
+			max-width: 80%;
+		}
+	}
+}
+
+.experience-swiper {
+	&__wrapper {
+	}
+
+	&__btn-box {
+	}
+
+	&__btn {
+	}
+
+	&__btn-prev {
+	}
+
+	&__btn-next {
+	}
+}
+
+.experience-slide {
+	width: 210px !important;
+	&__wrapper {
+	}
+}

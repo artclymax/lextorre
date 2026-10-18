@@ -1,0 +1,67 @@
+@use "../tools" as *;
+
+.how-we-work {
+	padding-block: var(--section-padding);
+
+	&__container {
+	}
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: adapt(60, 40);
+		}
+	}
+}
+
+.how-we-work-swiper {
+	&__wrapper {
+	}
+
+	.swiper-btn-box {
+		margin-top: 20px;
+	}
+
+	&__btn {
+	}
+
+	&__btn-prev {
+	}
+
+	&__btn-next {
+	}
+}
+
+.how-we-work-slide {
+	width: 285px !important;
+	position: relative;
+
+	@include media($tablet) {
+		width: adapt(285, 174) !important;
+	}
+
+	&__wrapper {
+		max-width: 216px;
+	}
+
+	&__number {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+
+		font-family: var(--font-family-title-second);
+		font-size: 96px;
+		line-height: 100%;
+		color: var(--color-border);
+	}
+
+	&__title {
+		margin-block: 30px 18px;
+	}
+
+	&__text {
+		@include reset;
+
+		font-size: 14px;
+	}
+}

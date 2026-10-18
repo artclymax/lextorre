@@ -1,0 +1,56 @@
+@use "../tools" as *;
+
+.docs {
+	&__container {
+		@include flex-column;
+		gap: adapt(60, 40);
+	}
+
+	&__title {
+	}
+
+	.docs-swiper {
+		width: 100%;
+	}
+}
+
+.docs-swiper {
+	@include flex-column;
+
+	&__wrapper {
+	}
+
+	.swiper-btn-box {
+		margin-top: 20px;
+	}
+
+	&__btn {
+	}
+
+	&__btn-prev {
+	}
+
+	&__btn-next {
+	}
+}
+
+.docs-slide {
+	width: 285px !important;
+	@include media($mobile) {
+		width: 340px !important;
+	}
+	&__wrapper-link {
+		height: 400px;
+		@include media($mobile) {
+			height: 480px;
+		}
+	}
+}
+
+.swiper-btn {
+	&__prev {
+	}
+
+	&__next {
+	}
+}
